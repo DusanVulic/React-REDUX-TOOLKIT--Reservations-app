@@ -3,7 +3,8 @@ import React, { useState } from "react";
 function App() {
   return (
     <div className="App">
-      <h3>REDUX-TOOLKIT</h3>
+      <h3>REDUX-TOOLKIT </h3>
+      <p>learning project</p>
       <div className="container">
         <div className="reservation-container">
           <div>
