@@ -34,12 +34,12 @@ function App() {
 
   return (
     <div className="App">
-      <h3>REDUX-TOOLKIT </h3>
+      <h2>REDUX-TOOLKIT </h2>
       <p>learning project </p>
       <div className="container">
         <div className="reservation-container">
           <div>
-            <h5 className="reservation-header"> Restaurant Reservations</h5>
+            <h5 className="reservation-header"> restaurant reservations</h5>
             <div className="reservation-cards-container">
               {reservations.map((reservation) => {
                 const { id } = reservation;
@@ -58,7 +58,9 @@ function App() {
               value={reservationNameInput}
               onChange={(e) => setReservationNameInput(e.target.value)}
             />
-            <button onClick={handleAddReservations}>Add</button>
+            <button onClick={handleAddReservations} className="btn">
+              Add
+            </button>
           </div>
         </div>
         <div className="customer-food-container">

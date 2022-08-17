@@ -25,11 +25,11 @@ const ReservationCard = ({ name, id }) => {
 
   return (
     <div className="reservation-card-container">
-      <h4>{name} </h4>
-      <button onClick={() => removeReservationHandler(id)}>
+      <h4 className="customer">{name} </h4>
+      <button className="btn" onClick={() => removeReservationHandler(id)}>
         remove reservation
       </button>
-      <button onClick={() => confirmReservationHandler(id)}>
+      <button className="btn" onClick={() => confirmReservationHandler(id)}>
         confirm reservation
       </button>
     </div>

@@ -3,13 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Quicksand";
 }
 
 .App {
     max-width: 70rem;
     margin: 0 auto;
     padding: 5rem 0;
+}
+
+.App h2 {
+    color: blueviolet;
 }
 
 .container {
@@ -22,8 +26,8 @@
 }
 
 .reservation-header {
+    color: blueviolet;
     font-size: 1.5rem;
-    color: rgb(36, 36, 36);
 }
 
 .reservation-cards-container {
@@ -46,6 +50,8 @@
 
 .reservation-input-container input {
     width: 100%;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
 }
 
 .reservation-input-container button {
@@ -82,7 +88,10 @@
 }
 
 .customer-food-input-container input {
-    width: 5rem;
+    width: 8rem;
+    margin-right: 0.1rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
 }
 
 .customer-foods-container {
@@ -90,4 +99,36 @@
     width: 100%;
     margin-top: 1rem;
     justify-content: space-between;
+}
+
+.btn {
+    display: inline-block;
+    background: blueviolet;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.customer {
+    text-transform: capitalize;
+}
+
+.customer-name {
+    color: blueviolet;
+    text-transform: capitalize;
+}
+
+.form-btn {
+    padding: 0.25rem 0.5rem;
+    border-color: transparent;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 0.25rem;
 }

@@ -18,7 +18,7 @@ const CustomerCard = ({ id, name, food }) => {
 
   return (
     <div className="customer-food-card-container">
-      <p>{name}</p>
+      <h4 className="customer-name">{name}</h4>
       <div className="customer-foods-container">
         <div className="customer-food">
           {food.map((meal, index) => {
@@ -26,8 +26,14 @@ const CustomerCard = ({ id, name, food }) => {
           })}
         </div>
         <div className="customer-food-input-container">
-          <input value={meal} onChange={(e) => setMeal(e.target.value)} />
-          <button onClick={() => addFoodHandler(id, meal)}>Add food</button>
+          <input
+            className="input"
+            value={meal}
+            onChange={(e) => setMeal(e.target.value)}
+          />
+          <button className="form-btn" onClick={() => addFoodHandler(id, meal)}>
+            Add food
+          </button>
         </div>
       </div>
     </div>
