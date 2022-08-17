@@ -11,11 +11,18 @@ export const customerSlice = createSlice({
         addCustomer: (state, action) => {
             state.value.push(action.payload);
         },
+        addFoodToCustomer: (state, action) => {
+            state.value.forEach((customer) => {
+                if (customer.id === action.payload.id) {
+                    customer.food.push(action.payload.food);
+                }
+            });
+        },
     },
 });
 
 //exportujem akcije
-export const { addCustomer } = customerSlice.actions;
+export const { addCustomer, addFoodToCustomer } = customerSlice.actions;
 
 ///exportujem reducer
 export default customerSlice.reducer;
