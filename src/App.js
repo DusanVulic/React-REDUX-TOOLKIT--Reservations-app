@@ -40,7 +40,13 @@ function App() {
             <div className="reservation-cards-container">
               {reservations.map((reservation) => {
                 const { id } = reservation;
-                return <ReservationCard key={id} name={reservation.name} />;
+                return (
+                  <ReservationCard
+                    key={id}
+                    name={reservation.name}
+                    id={reservation.id}
+                  />
+                );
               })}
             </div>
           </div>
