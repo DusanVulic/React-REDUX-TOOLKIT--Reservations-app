@@ -6,6 +6,6 @@ import CustomerReducer from "../features/customerSlice";
 export const store = configureStore({
     reducer: {
         reservations: ReservationReducer,
-        customer: CustomerReducer,
+        customers: CustomerReducer,
     },
 });

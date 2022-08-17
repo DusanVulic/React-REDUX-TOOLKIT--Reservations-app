@@ -7,11 +7,15 @@ const initialState = {
 export const customerSlice = createSlice({
     name: "customers",
     initialState,
-    reducers: {},
+    reducers: {
+        addCustomer: (state, action) => {
+            state.value.push(action.payload);
+        },
+    },
 });
 
 //exportujem akcije
-export const {} = customerSlice.actions;
+export const { addCustomer } = customerSlice.actions;
 
 ///exportujem reducer
 export default customerSlice.reducer;

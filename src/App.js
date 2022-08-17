@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ReservationCard from "./components/ReservationCard";
+import CustomerCard from "./components/CustomerCard";
 //ispod je metod iz reservation slice
 import { addReservation } from "./features/reservationSlice";
 
 function App() {
+  // mora biti isto ime kao i u state !!!
   const reservations = useSelector((state) => state.reservations.value);
+  const customers = useSelector((state) => state.customers.value);
 
   console.log(reservations);
 
@@ -59,16 +62,10 @@ function App() {
           </div>
         </div>
         <div className="customer-food-container">
-          <div className="customer-food-card-container">
-            <p>Selena Gomez</p>
-            <div className="customer-foods-container">
-              <div className="customer-food"></div>
-              <div className="customer-food-input-container">
-                <input />
-                <button>Add</button>
-              </div>
-            </div>
-          </div>
+          {customers.map((customer) => {
+            const { id } = customer;
+            return <CustomerCard key={id} {...customer} />;
+          })}
         </div>
       </div>
     </div>
