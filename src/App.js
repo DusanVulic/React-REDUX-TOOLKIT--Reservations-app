@@ -1,6 +1,26 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import ReservationCard from "./components/ReservationCard";
+//ispod je metod iz reservation slice
+import { addReservation } from "./features/reservationSlice";
 
 function App() {
+  const reservations = useSelector((state) => state.reservations.value);
+
+  console.log(reservations);
+
+  const [reservationNameInput, setReservationNameInput] = useState("");
+
+  const handleAddReservations = () => {
+    if (!reservationNameInput) {
+      return;
+    }
+
+    addReservation();
+    console.log("kliknuto");
+    setReservationNameInput("");
+  };
+
   return (
     <div className="App">
       <h3>REDUX-TOOLKIT </h3>
@@ -8,14 +28,20 @@ function App() {
       <div className="container">
         <div className="reservation-container">
           <div>
-            <h5 className="reservation-header">Reservations</h5>
+            <h5 className="reservation-header"> Restaurant Reservations</h5>
             <div className="reservation-cards-container">
-              <div className="reservation-card-container">Laith Harb</div>
+              {reservations.map((reservation) => {
+                const { id } = reservation;
+                return <ReservationCard key={id} name={reservation.name} />;
+              })}
             </div>
           </div>
           <div className="reservation-input-container">
-            <input />
-            <button>Add</button>
+            <input
+              value={reservationNameInput}
+              onChange={(e) => setReservationNameInput(e.target.value)}
+            />
+            <button onClick={handleAddReservations}>Add</button>
           </div>
         </div>
         <div className="customer-food-container">
