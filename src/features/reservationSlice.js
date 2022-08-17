@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: [{ name: "Dusan Vulic", id: 1 }],
+    value: [],
 };
 
 export const reservationSlice = createSlice({

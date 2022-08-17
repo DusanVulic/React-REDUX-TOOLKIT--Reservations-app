@@ -11,12 +11,20 @@ function App() {
 
   const [reservationNameInput, setReservationNameInput] = useState("");
 
+  /// pozivam dispatch kako bih mogao koristiti metodu iz slice koju koristim
+  const dispatch = useDispatch();
+
   const handleAddReservations = () => {
     if (!reservationNameInput) {
       return;
     }
-
-    addReservation();
+    // vrapujem dispatch-om metodu iz slice kako bih je mogao koristiti
+    dispatch(
+      addReservation({
+        name: reservationNameInput,
+        id: new Date().getTime().toString(),
+      })
+    );
     console.log("kliknuto");
     setReservationNameInput("");
   };
